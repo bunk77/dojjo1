@@ -80,7 +80,14 @@ Background.prototype.draw = function (ctx) {
 //===============================================================================
 
 function Unicorn(game) {
-    //function Animation(spriteSheet, startX, startY, frameWidth, frameHeight, frameDuration, frames, loop, reverse) {
+    //function Animation(spriteSheet, startX, startY, frameWidth, frameHeight, 
+    //frameDuration, frames, loop, reverse) {
+
+    //walking animation
+    this.animation = new Animation(ASSET_MANAGER.getAsset("./kirbyRun.png"), 0, 0, 20, 17,
+    0.2, 10, true, false);
+
+
 
     this.jumping = false;
     this.radius = 100;
@@ -139,7 +146,7 @@ Unicorn.prototype.draw = function (ctx) {
 
 var ASSET_MANAGER = new AssetManager();
 
-ASSET_MANAGER.queueDownload("./panda-walk.png");
+ASSET_MANAGER.queueDownload("./kirbyRun.png");
 ASSET_MANAGER.queueDownload("./panda-jump.png");
 
 ASSET_MANAGER.downloadAll(function () {
@@ -157,45 +164,3 @@ ASSET_MANAGER.downloadAll(function () {
     gameEngine.init(ctx);
     gameEngine.start();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
